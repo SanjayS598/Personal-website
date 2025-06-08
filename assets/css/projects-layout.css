@@ -384,6 +384,18 @@
     }
 }
 
+/* Enhanced mobile grid layout for better responsiveness */
+@media screen and (max-width: 480px) {
+    #projects.spotlights {
+        display: block !important; /* Fallback to block layout for better mobile control */
+    }
+    
+    #projects.spotlights section {
+        margin-bottom: 1.5rem !important;
+        width: 100% !important;
+    }
+}
+
 /* Special handling for long titles at critical breakpoints */
 @media screen and (max-width: 1200px) and (min-width: 481px) {
     /* Specific targeting for longest titles that might overflow */

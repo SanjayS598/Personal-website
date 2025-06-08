@@ -1,0 +1,2001 @@
+/* Mobile Optimization CSS - Comprehensive mobile responsiveness */
+
+/* HOME PAGE BANNER FIXES - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Enhanced banner title box to fit text properly */
+  #banner .inner {
+    padding: 2rem 1.5rem !important;
+    margin: 1rem auto !important;
+    text-align: center !important;
+    width: calc(100% - 2rem) !important;
+    max-width: 90% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    /* Enhanced container styling for better text fitting */
+    min-height: auto !important;
+    background-color: rgba(5, 12, 24, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  #banner .inner header.major {
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 !important;
+  }
+  
+  #banner .inner h1.typing-container {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box !important;
+    /* Remove typing animation on mobile - just show text */
+    animation: none !important;
+    border-right: none !important;
+  }
+  
+  #banner .content {
+    text-align: center !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+    padding: 0 !important;
+  }
+  
+  #banner .content p.typing-container {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box !important;
+    /* Remove typing animation on mobile - just show text */
+    animation: none !important;
+    border-right: none !important;
+  }
+}
+
+/* TILES SECTION IMAGE FIXES - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Fix image duplication and display issues */
+  .tiles {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 1rem !important;
+  }
+  
+  .tiles article {
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+  }
+  
+  .tiles article .image {
+    width: 100% !important;
+    height: 200px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    order: 1 !important;
+  }
+  
+  .tiles article .image::before {
+    display: none !important; /* Remove any overlay that might duplicate images */
+  }
+  
+  .tiles article .image::after {
+    display: none !important; /* Remove any pseudo-elements that might duplicate images */
+  }
+  
+  .tiles article .image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  .tiles article header.major {
+    order: 2 !important;
+    padding: 1.5rem !important;
+    background: var(--bg-color, #242943) !important;
+    text-align: center !important;
+  }
+  
+  .tiles article header.major h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.5rem !important;
+    color: var(--highlight-color, #9bf1ff) !important;
+  }
+  
+  .tiles article header.major p {
+    font-size: 1rem !important;
+    margin: 0 !important;
+    color: var(--fg-color, #ffffff) !important;
+  }
+}
+
+/* CONTACT SECTION BUTTON ALIGNMENT FIXES - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Fix contact form button alignment */
+  #contact .actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
+    padding: 0 !important;
+  }
+  
+  #contact .actions li {
+    list-style: none !important;
+    margin: 0 !important;
+    flex: 1 1 auto !important;
+    max-width: 150px !important;
+  }
+    #contact .actions li input[type="submit"],
+  #contact .actions li input[type="reset"] {
+    width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+  }
+  
+  /* Ensure both buttons have same styling and alignment */
+  #contact .actions li input[type="submit"] {
+    background-color: #ffffff !important;
+    color: #242943 !important;
+    border: 2px solid #ffffff !important;
+  }
+  
+  #contact .actions li input[type="submit"]:hover {
+    background-color: #9bf1ff !important;
+    border-color: #9bf1ff !important;
+  }
+  
+  #contact .actions li input[type="reset"] {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+  }
+    #contact .actions li input[type="reset"]:hover {
+    background-color: #ffffff !important;
+    color: #242943 !important;
+  }
+}
+
+/* TYPING ANIMATION FIXES FOR ALL PAGES - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Disable typing animations on mobile for all pages */
+  .typing-container {
+    animation: none !important;
+    border-right: none !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    width: auto !important;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  
+  .typing-container::after {
+    display: none !important;
+  }
+  
+  /* About Me, Experience, Projects page title fixes */
+  .special .inner .title-box h1.typing-container,
+  .special .inner h1.typing-container,
+  section.special h1.typing-container {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin: 0 auto 1rem auto !important;
+    padding: 0.5rem !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    word-wrap: break-word !important;
+    animation: none !important;
+    border-right: none !important;
+  }
+  
+  /* Experience page specific title container fix */
+  .wrapper.style1 .inner header.major h1.typing-container {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin: 0 auto 1rem auto !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    word-wrap: break-word !important;
+    animation: none !important;
+    border-right: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Ultra-compact contact button alignment */
+  #contact .actions {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
+  }
+  
+  #contact .actions li {
+    max-width: 200px !important;
+    width: 100% !important;
+  }
+  
+  #contact .actions li input[type="submit"],
+  #contact .actions li input[type="reset"] {
+    width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Ultra-small screen contact button fixes */
+  #contact .actions li {
+    max-width: 180px !important;
+  }
+  
+  #contact .actions li input[type="submit"],
+  #contact .actions li input[type="reset"] {
+    height: 42px !important;
+    min-height: 42px !important;
+    font-size: 0.8rem !important;
+    padding: 0.6rem 0.8rem !important;
+  }
+}
+
+/* Enhanced typing animation for mobile */
+@media screen and (max-width: 768px) {
+  .typing-container {
+    font-size: 1.2em;
+    line-height: 1.3;
+    white-space: normal; /* Allow text wrapping on mobile */
+    overflow: visible;
+    animation: typing 3s steps(30, end), blink-caret 0s step-end 3s;
+  }
+  
+  /* Shorter animation duration for mobile */
+  .typing-container::after {
+    animation: blink-caret 0s step-end infinite, remove-caret 3s step-end forwards;
+  }
+}
+
+/* Banner mobile optimization */
+@media screen and (max-width: 768px) {
+  #banner .inner {
+    padding: 2em 1.5em !important;
+    margin: 1rem;
+  }
+  
+  #banner .inner h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  
+  #banner .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #banner .inner {
+    padding: 1.5em 1em !important;
+    margin: 0.5rem;
+  }
+  
+  #banner .inner h1 {
+    font-size: 1.3rem !important;
+  }
+  
+  #banner .content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Title sections mobile optimization */
+@media screen and (max-width: 768px) {
+  .title-box h1 {
+    font-size: 2rem !important;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  section.special .inner {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title-box h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  section.special .inner {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+/* Navigation menu mobile improvements */
+@media screen and (max-width: 768px) {
+  #menu {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  
+  #menu .links {
+    padding: 2rem 1rem;
+  }
+  
+  #menu .links li {
+    margin: 0.5rem 0;
+  }
+  
+  #menu .links li a {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #menu .links li a:hover {
+    background-color: var(--highlight-color);
+  }
+}
+
+/* Tiles section mobile optimization */
+@media screen and (max-width: 768px) {
+  .tiles {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+  
+  .tiles article {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px;
+    margin: 0 !important;
+  }
+  
+  .tiles article .image {
+    height: 150px !important;
+    overflow: hidden;
+  }
+  
+  .tiles article .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .tiles article header.major {
+    padding: 1rem !important;
+  }
+  
+  .tiles article header.major h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tiles article header.major p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tiles article {
+    min-height: 180px;
+  }
+  
+  .tiles article .image {
+    height: 120px !important;
+  }
+  
+  .tiles article header.major {
+    padding: 0.75rem !important;
+  }
+  
+  .tiles article header.major h3 {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Projects/Spotlights mobile optimization */
+@media screen and (max-width: 768px) {
+  .spotlights section {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 2rem;
+  }
+  
+  .spotlights section .image {
+    width: 100% !important;
+    height: 200px !important;
+    order: 1;
+  }
+  
+  .spotlights section .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .spotlights section .content {
+    width: 100% !important;
+    order: 2;
+    padding: 1.5rem !important;
+  }
+  
+  .spotlights section .content .inner {
+    padding: 0 !important;
+  }
+  
+  .spotlights section .content header.major h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .spotlights section .content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .spotlights section .image {
+    height: 150px !important;
+  }
+  
+  .spotlights section .content {
+    padding: 1rem !important;
+  }
+  
+  .spotlights section .content header.major h3 {
+    font-size: 1.2rem;
+  }
+  
+  .spotlights section .content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Side-by-side container mobile improvements */
+@media screen and (max-width: 768px) {
+  .side-by-side-container {
+    flex-direction: column !important;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .section-bubble {
+    flex: none !important;
+    width: 100% !important;
+    min-width: auto !important;
+    max-width: none !important;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .side-by-side-container {
+    padding: 0 0.5rem;
+    gap: 1rem;
+  }
+  
+  .section-bubble {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Timeline mobile improvements */
+@media screen and (max-width: 768px) {
+  .timeline-content h2 {
+    font-size: 1.1rem !important;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.75rem;
+  }
+  
+  .timeline-content .date {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .timeline-content ul {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .timeline-content ul li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-content h2 {
+    font-size: 1rem !important;
+  }
+  
+  .timeline-content h3 {
+    font-size: 0.95rem !important;
+  }
+  
+  .timeline-content .date {
+    font-size: 0.8rem;
+  }
+  
+  .timeline-content ul {
+    font-size: 0.85rem;
+  }
+}
+
+/* Skills section mobile optimization */
+@media screen and (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .skills-container.two-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .skill-category {
+    flex: none !important;
+    width: 100% !important;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-list li {
+    font-size: 0.95rem;
+    margin: 0.6em 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-container {
+    gap: 1rem;
+  }
+  
+  .skill-category {
+    padding: 1.2rem;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.1rem;
+  }
+  
+  .skill-list li {
+    font-size: 0.9rem;
+    margin: 0.5em 0;
+  }
+}
+
+/* Contact section mobile optimization */
+@media screen and (max-width: 768px) {
+  #contact .inner {
+    padding: 2rem 1rem !important;
+  }
+  
+  #contact .inner section {
+    margin-bottom: 2rem;
+  }
+  
+  #contact .split {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+  
+  #contact .split section {
+    width: 100% !important;
+  }
+  
+  #contact h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  #contact .fields {
+    margin-bottom: 1.5rem;
+  }
+  
+  #contact .field {
+    margin-bottom: 1rem;
+  }
+  
+  #contact .field.half {
+    width: 100% !important;
+  }
+  
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact textarea {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  
+  #contact textarea {
+    min-height: 120px;
+  }
+  
+  #contact .actions li {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  #contact .contact-method {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  #contact .contact-method h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  
+  #contact .contact-method a {
+    font-size: 0.95rem;
+    word-break: break-all;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #contact .inner {
+    padding: 1.5rem 0.5rem !important;
+  }
+  
+  #contact h3 {
+    font-size: 1.2rem;
+  }
+  
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact textarea {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+  
+  #contact .actions {
+    text-align: center;
+  }
+  
+  #contact .actions li {
+    margin: 0.25rem;
+    display: inline-block;
+  }
+  
+  #contact .contact-method {
+    padding: 0.75rem;
+  }
+}
+
+/* Footer mobile optimization */
+@media screen and (max-width: 768px) {
+  #footer .inner {
+    padding: 2rem 1rem !important;
+    text-align: center;
+  }
+  
+  #footer .icons {
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+  
+  #footer .icons li {
+    margin: 0 0.5rem;
+  }
+  
+  #footer .icons li a {
+    font-size: 1.2rem;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+  }
+  
+  #footer .copyright {
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+  
+  #footer .copyright li {
+    margin: 0 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer .inner {
+    padding: 1.5rem 0.5rem !important;
+  }
+  
+  #footer .icons li a {
+    font-size: 1.1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+  
+  #footer .copyright {
+    font-size: 0.85rem;
+  }
+}
+
+/* General mobile text improvements */
+@media screen and (max-width: 768px) {
+  /* Improve readability on mobile */
+  p {
+    line-height: 1.6 !important;
+    margin-bottom: 1rem;
+  }
+  
+  /* Ensure proper spacing for sections */
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  /* Better button sizing for mobile */
+  .button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    min-height: 44px; /* Touch-friendly minimum size */
+  }
+  
+  /* Improve form elements for mobile */
+  input, select, textarea {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Even more compact spacing for very small screens */
+  section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .button {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Ensure touch targets are large enough */
+  a, button, .button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Landscape orientation optimization for mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  #banner .inner {
+    padding: 1rem 2rem !important;
+  }
+  
+  #banner .inner h1 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  section.special .inner {
+    padding: 1rem;
+  }
+  
+  .title-box h1 {
+    font-size: 1.6rem !important;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media screen and (max-width: 768px) {
+  /* Ensure sufficient contrast and spacing for touch */
+  a:focus, button:focus, .button:focus {
+    outline: 2px solid var(--highlight-bright);
+    outline-offset: 2px;
+  }
+  
+  /* Improve clickable area sizes */
+  nav a, .menu a {
+    padding: 0.75rem 1rem;
+    display: block;
+  }
+}
+
+/* Prevent horizontal scrolling issues */
+@media screen and (max-width: 768px) {
+  * {
+    max-width: 100%;
+  }
+  
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Ensure containers don't overflow */
+  .inner {
+    box-sizing: border-box;
+  }
+}
+
+/* Additional mobile optimizations for AboutMe page features section */
+@media screen and (max-width: 768px) {
+  .features.three-column {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem;
+  }
+  
+  .features.three-column article {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5rem;
+    background-color: var(--bg-alt-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .features.three-column article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .features.three-column article .icon {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+    color: var(--highlight-color);
+  }
+  
+  .features.three-column article .content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--highlight-color);
+  }
+  
+  .features.three-column article .content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .features.three-column article {
+    padding: 1.2rem;
+  }
+  
+  .features.three-column article .icon {
+    font-size: 1.8rem !important;
+  }
+  
+  .features.three-column article .content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .features.three-column article .content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Improve mobile experience for AboutMe image */
+@media screen and (max-width: 768px) {
+  .image.smaller-image {
+    width: 100% !important;
+    height: 250px !important;
+    margin-bottom: 1rem;
+  }
+  
+  .image.smaller-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+/* ABOUT ME IMAGE SIZING FIXES - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Make About Me profile image larger and rectangular on mobile */
+  #about-intro .image.smaller-image {
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto 2rem auto !important;
+    display: block !important;
+    border-radius: 12px !important; /* Change from circular to rounded rectangle */
+    aspect-ratio: 4/3 !important; /* Change from 1/1 (circle) to 4/3 (rectangle) */
+    overflow: hidden !important;
+    border: 3px solid var(--border-color) !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  #about-intro .image.smaller-image img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 8px !important; /* Slightly smaller border radius for the image */
+    display: block !important;
+    margin: 0 auto !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+  
+  /* Remove circular hover animation */
+  #about-intro .image.smaller-image:hover {
+    animation: none !important;
+    border-color: var(--highlight-color) !important;
+    box-shadow: 0 0 25px rgba(93, 157, 246, 0.3) !important;
+    transform: translateY(-5px) !important;
+  }
+  
+  /* Adjust spotlight layout for About Me section */
+  #about-intro.spotlights section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  #about-intro .content {
+    width: 100% !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+  }
+  
+  #about-intro .content .inner {
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Smaller screens - adjust image size but keep rectangular */
+  #about-intro .image.smaller-image {
+    max-width: 280px !important;
+    aspect-ratio: 4/3 !important; /* Maintain rectangular aspect ratio */
+    border-radius: 10px !important;
+  }
+  
+  #about-intro .image.smaller-image img {
+    border-radius: 6px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Ultra-small screens */
+  #about-intro .image.smaller-image {
+    max-width: 240px !important;
+    aspect-ratio: 4/3 !important; /* Maintain rectangular aspect ratio */
+    border-radius: 8px !important;
+  }
+  
+  #about-intro .image.smaller-image img {
+    border-radius: 4px !important;
+  }
+}
+
+/* EMAIL SUBSECTION FORMATTING FIXES - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Fix contact section email display formatting */
+  #contact .split section .contact-method {
+    text-align: center !important;
+    padding: 1.5rem !important;
+    margin: 1rem 0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  #contact .split section .contact-method .icon {
+    font-size: 1.5rem !important;
+    color: #9bf1ff !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+  }
+  
+  #contact .split section .contact-method h3 {
+    font-size: 1.1rem !important;
+    margin: 0.5rem 0 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+  }
+  
+  #contact .split section .contact-method a {
+    font-size: 1rem !important;
+    color: #9bf1ff !important;
+    text-decoration: none !important;
+    word-wrap: break-word !important;
+    display: inline-block !important;
+    margin-top: 0.25rem !important;
+  }
+  
+  #contact .split section .contact-method a:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+  }
+  
+  /* Adjust split section layout */
+  #contact .split {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+  }
+  
+  #contact .split section {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Final mobile optimizations and viewport improvements */
+
+/* Ensure proper viewport scaling */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 16px; /* Base font size for mobile */
+  }
+  
+  /* Prevent zoom on form inputs in iOS */
+  input[type="text"],
+  input[type="email"], 
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Very small screens - ultra compact mode */
+@media screen and (max-width: 320px) {
+  .typing-container {
+    font-size: 1.1em;
+    animation: typing 2.5s steps(25, end), blink-caret 0s step-end 2.5s;
+  }
+  
+  #banner .inner {
+    padding: 1rem 0.75rem !important;
+    margin: 0.25rem;
+  }
+  
+  #banner .inner h1 {
+    font-size: 1.2rem !important;
+  }
+  
+  .title-box h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  /* Ultra compact navigation */
+  #menu .links li a {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  /* Ultra compact sections */
+  section {
+    margin-bottom: 1rem;
+  }
+  
+  .section-bubble {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Ultra compact tiles */
+  .tiles article {
+    min-height: 150px;
+  }
+  
+  .tiles article .image {
+    height: 100px !important;
+  }
+  
+  .tiles article header.major {
+    padding: 0.6rem !important;
+  }
+  
+  .tiles article header.major h3 {
+    font-size: 1rem !important;
+  }
+  
+  .tiles article header.major p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Print styles for mobile */
+@media print {
+  .typing-container {
+    animation: none !important;
+    border-right: none !important;
+  }
+  
+  #menu, #header {
+    display: none !important;
+  }
+  
+  .button, .actions {
+    display: none !important;
+  }
+}
+
+/* Dark mode considerations for mobile */
+@media screen and (max-width: 768px) and (prefers-color-scheme: dark) {
+  /* Ensure good contrast on mobile dark mode */
+  body {
+    background-color: var(--bg-color);
+  }
+  
+  .section-bubble,
+  .skill-category,
+  .features.three-column article {
+    background-color: var(--bg-alt-color);
+    border-color: var(--border-color);
+  }
+}
+
+/* High contrast mode support for mobile accessibility */
+@media screen and (max-width: 768px) and (prefers-contrast: high) {
+  .button, .button.primary {
+    border: 2px solid !important;
+  }
+  
+  a:focus, button:focus, .button:focus {
+    outline: 3px solid var(--highlight-bright) !important;
+    outline-offset: 3px;
+  }
+}
+
+/* Reduced motion preferences for mobile */
+@media screen and (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .typing-container {
+    animation: none !important;
+    border-right: none !important;
+  }
+  
+  .timeline-item,
+  .section-bubble,
+  .skill-category {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Landscape orientation specific fixes for mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  #banner {
+    height: 60vh; /* Reduce banner height in landscape */
+  }
+  
+  #banner .inner {
+    padding: 1.5rem 2rem !important;
+  }
+  
+  .title-box h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Optimize timeline for landscape */
+  .side-by-side-container {
+    flex-direction: row !important;
+    gap: 1rem;
+  }
+  
+  .section-bubble {
+    flex: 1 1 48% !important;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Touch device specific optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .tiles article:hover,
+  .spotlights section:hover,
+  .section-bubble:hover,
+  .skill-category:hover,
+  .features.three-column article:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+  }
+  
+  /* Larger touch targets */
+  .button, a.button, input[type="submit"] {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.8rem 1.5rem !important;
+  }
+  
+  /* Improve form interaction on touch */
+  input, textarea, select {
+    padding: 1rem !important;
+  }
+}
+
+/* Performance optimization for mobile */
+@media screen and (max-width: 768px) {
+  /* Use transform3d to trigger hardware acceleration */
+  .timeline-item,
+  .section-bubble,
+  .tiles article,
+  .spotlights section {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Experience page specific mobile optimizations */
+@media screen and (max-width: 768px) {
+  /* Fix Experience page title box text cutoff */
+  .title-box {
+    padding: 1rem 1.5rem !important;
+    margin: 0 auto 2rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    width: calc(100% - 2rem) !important;
+  }
+  
+  .title-box h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Optimize Experience page content text length for mobile */
+  #timeline-section .timeline-content h2 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.5rem !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  #timeline-section .timeline-content h3 {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  #timeline-section .timeline-content ul li {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.5rem !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  #education-section .timeline-content h2 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.5rem !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  #education-section .timeline-content h3 {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  #education-section .timeline-content ul li {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.5rem !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Experience page timeline date optimization */
+  .timeline-content .date {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word !important;
+  }
+  
+  /* Experience page section headings optimization */
+  .section-heading {
+    font-size: 1.3rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Ultra-compact Experience page optimizations */
+  .title-box {
+    padding: 0.75rem 1rem !important;
+    margin: 0 auto 1.5rem !important;
+    width: calc(100% - 1rem) !important;
+  }
+  
+  .title-box h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  #timeline-section .timeline-content h2,
+  #education-section .timeline-content h2 {
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  #timeline-section .timeline-content h3,
+  #education-section .timeline-content h3 {
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  #timeline-section .timeline-content ul li,
+  #education-section .timeline-content ul li {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .timeline-content .date {
+    font-size: 0.75rem !important;
+  }
+  
+  .section-heading {
+    font-size: 1.1rem !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Ultra-small screen Experience page optimizations */
+  .title-box {
+    padding: 0.5rem 0.75rem !important;
+    margin: 0 auto 1rem !important;
+    width: calc(100% - 0.5rem) !important;
+  }
+  
+  .title-box h1 {
+    font-size: 1.3rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  #timeline-section .timeline-content h2,
+  #education-section .timeline-content h2 {
+    font-size: 0.9rem !important;
+  }
+  
+  #timeline-section .timeline-content h3,
+  #education-section .timeline-content h3 {
+    font-size: 0.8rem !important;
+  }
+  
+  #timeline-section .timeline-content ul li,
+  #education-section .timeline-content ul li {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .section-heading {
+    font-size: 1rem !important;
+  }
+}
+
+/* SMALLER SCREEN BANNER OPTIMIZATIONS */
+@media screen and (max-width: 480px) {
+  /* Phone-specific banner optimizations */
+  #banner .inner {
+    padding: 1.5rem 1rem !important;
+    margin: 0.5rem auto !important;
+    width: calc(100% - 1rem) !important;
+    max-width: 95% !important;
+  }
+  
+  #banner .inner h1.typing-container {
+    font-size: 1.4rem !important;
+    line-height: 1.3 !important;
+    padding: 0 0.25rem !important;
+  }
+  
+  #banner .content p.typing-container {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    padding: 0 0.25rem !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Ultra-small screen banner optimizations */
+  #banner .inner {
+    padding: 1rem 0.75rem !important;
+    margin: 0.25rem auto !important;
+    width: calc(100% - 0.5rem) !important;
+    max-width: 98% !important;
+  }
+  
+  #banner .inner h1.typing-container {
+    font-size: 1.2rem !important;
+    line-height: 1.4 !important;
+    padding: 0 0.1rem !important;
+  }
+  
+  #banner .content p.typing-container {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+    padding: 0 0.1rem !important;
+  }
+}
+
+/* ABOUT ME PAGE TEXT CENTERING - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Center "Hello, I'm Sanjay" text on mobile */
+  #about-intro .content .inner header.major {
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  
+  /* Center "Beyond Coding" text on mobile */
+  #personal .inner header.major {
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  
+}
+
+@media screen and (max-width: 480px) {
+  /* Smaller font sizes for mobile phones */
+  #about-intro .content .inner header.major h2,
+  #personal .inner header.major h2 {
+    font-size: 1.6rem !important;
+  }
+}
+
+/* Final comprehensive mobile fixes and optimizations */
+
+/* Home page tiles image duplication prevention - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Prevent any pseudo-element image duplication */
+  .tiles article::before,
+  .tiles article::after {
+    display: none !important;
+  }
+  
+  .tiles article .image::before,
+  .tiles article .image::after {
+    display: none !important;
+  }
+  
+  /* Ensure clean tile display */
+  .tiles article {
+    background-image: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .tiles article .image {
+    display: block !important;
+    width: 100% !important;
+    height: 150px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    order: 1 !important;
+  }
+  
+  .tiles article .image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+  
+  .tiles article header.major {
+    order: 2 !important;
+    padding: 1rem !important;
+    background-color: rgba(36, 41, 67, 0.95) !important;
+    border-top: 1px solid rgba(212, 212, 255, 0.1) !important;
+  }
+}
+
+/* Home page banner animation centering fixes - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Final animation and centering fixes */
+  #banner .inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 2rem 1.5rem !important;
+    margin: 1rem auto !important;
+    max-width: 90% !important;
+    box-sizing: border-box !important;
+  }
+  
+  #banner .inner header.major {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  #banner .inner h1.typing-container {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+    width: auto !important;
+    /* Fixed animation timing for mobile */
+    animation: typing 3.5s steps(30, end) forwards, blink-caret 0.8s step-end infinite !important;
+    border-right: 0.1em solid #ffffff !important;
+  }
+  
+  #banner .content {
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 1rem !important;
+  }
+  
+  #banner .content p.typing-container {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+    width: auto !important;
+    /* Delayed animation for subtitle with proper timing */
+    animation: typing 4s steps(50, end) 2.5s both, blink-caret 0.8s step-end infinite 6.5s !important;
+    border-right: 0.1em solid #ffffff !important;
+  }
+  
+  /* Stop cursor blinking after animations complete */
+  #banner .inner h1.typing-container.typing-done {
+    border-right: none !important;
+    animation: typing 3.5s steps(30, end) forwards !important;
+  }
+  
+  #banner .content p.typing-container.typing-done {
+    border-right: none !important;
+    animation: typing 4s steps(50, end) 2.5s both !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Ultra-compact banner fixes */
+  #banner .inner {
+    padding: 1.5rem 1rem !important;
+    margin: 0.5rem auto !important;
+    max-width: 95% !important;
+  }
+  
+  #banner .inner h1.typing-container {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  #banner .content p.typing-container {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Ultra-small banner fixes */
+  #banner .inner {
+    padding: 1rem 0.75rem !important;
+    margin: 0.25rem auto !important;
+  }
+  
+  #banner .inner h1.typing-container {
+    font-size: 1.3rem !important;
+    animation: typing 3s steps(25, end) forwards, blink-caret 0.8s step-end infinite !important;
+  }
+  
+  #banner .content p.typing-container {
+    font-size: 0.85rem !important;
+    animation: typing 3.5s steps(45, end) 2s both, blink-caret 0.8s step-end infinite 5.5s !important;
+  }
+}
+
+/* PERFORMANCE AND ACCESSIBILITY OPTIMIZATIONS - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Improve performance on mobile devices */
+  * {
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure proper image optimization */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    image-rendering: auto !important;
+  }
+  
+  /* Optimize animations for mobile performance */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffffff; }
+  }
+  
+  /* Ensure smooth scrolling on mobile */
+  html {
+    scroll-behavior: smooth !important;
+  }
+  
+  /* Optimize touch interactions */
+  a, button, .button, input[type="submit"], input[type="reset"] {
+    -webkit-tap-highlight-color: rgba(155, 241, 255, 0.3) !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* Prevent unwanted zoom on form inputs */
+  input, textarea, select {
+    font-size: 16px !important;
+    transform: scale(1) !important;
+  }
+  
+  /* Optimize viewport for mobile */
+  body {
+    -webkit-text-size-adjust: 100% !important;
+    -ms-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+}
+
+/* Final error prevention and fallbacks */
+@media screen and (max-width: 768px) {
+  /* Prevent any layout breaks */
+  .inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure all sections are properly contained */
+  section {
+    overflow-x: hidden !important;
+  }
+  
+  /* Fix any potential flexbox issues */
+  .side-by-side-container,
+  .features,
+  .tiles,
+  .spotlights {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure proper text wrapping */
+  h1, h2, h3, h4, h5, h6, p, li {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+/* COMPREHENSIVE SECTION IMAGE FILL OPTIMIZATION - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Ensure all section images completely fill their containers */
+  .tiles article .image,
+  .spotlights section .image,
+  section .image,
+  .image-container {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 200px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
+  
+  .tiles article .image img,
+  .spotlights section .image img,
+  section .image img,
+  .image-container img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+  
+  /* Prevent pseudo-element duplication */
+  .tiles article .image::before,
+  .tiles article .image::after,
+  .spotlights section .image::before,
+  .spotlights section .image::after {
+    display: none !important;
+    content: none !important;
+  }
+  
+  /* Tiles specific fixes */
+  .tiles article {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 350px !important;
+  }
+  
+  .tiles article .image {
+    order: 1 !important;
+    flex: 1 1 200px !important;
+    min-height: 200px !important;
+    max-height: 250px !important;
+  }
+  
+  .tiles article header.major {
+    order: 2 !important;
+    flex: 0 0 auto !important;
+    padding: 1.5rem !important;
+    background: var(--bg-color, #242943) !important;
+  }
+  
+  /* Spotlights specific fixes */
+  .spotlights section {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .spotlights section .image {
+    order: 1 !important;
+    width: 100% !important;
+    min-height: 250px !important;
+    max-height: 300px !important;
+  }
+  
+  .spotlights section .content {
+    order: 2 !important;
+    width: 100% !important;
+    padding: 2rem 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Smaller images for ultra-compact screens */
+  .tiles article .image,
+  .spotlights section .image {
+    min-height: 180px !important;
+    max-height: 220px !important;
+  }
+  
+  .tiles article .image img,
+  .spotlights section .image img {
+    min-height: 180px !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Ultra-small screen image optimization */
+  .tiles article .image,
+  .spotlights section .image {
+    min-height: 160px !important;
+    max-height: 200px !important;
+  }
+  
+  .tiles article .image img,
+  .spotlights section .image img {
+    min-height: 160px !important;
+  }
+}
+
+/* EXPERIENCE PAGE CONTENT FORMATTING - Mobile Only */
+@media screen and (max-width: 768px) {
+  /* Make Experience page content less narrow and better formatted */
+  .side-by-side-container {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 0 0.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  .section-bubble {
+    flex: 1 1 100% !important;
+    min-width: auto !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    padding: 1.5rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .section-bubble .timeline-container {
+    padding: 0 0 0 1.5rem !important;
+    margin-top: 1rem !important;
+  }
+  
+  .section-bubble .timeline-content {
+    padding: 1rem 0.5rem !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .section-bubble .timeline-content h2,
+  .section-bubble .timeline-content h3 {
+    line-height: 1.3 !important;
+    margin-bottom: 0.5rem !important;
+    word-wrap: break-word !important;
+  }
+  
+  .section-bubble .timeline-content ul {
+    margin: 0.5rem 0 !important;
+    padding-left: 1rem !important;
+  }
+  
+  .section-bubble .timeline-content li {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  
+  .section-bubble .date {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Phone-specific Experience page optimizations */
+  .section-bubble {
+    padding: 1rem 0.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .section-bubble .timeline-container {
+    padding: 0 0 0 1rem !important;
+  }
+  
+  .section-bubble .timeline-content {
+    padding: 0.75rem 0.25rem !important;
+  }
+  
+  .section-bubble .timeline-content h2 {
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .section-bubble .timeline-content h3 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .section-bubble .timeline-content li {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* Ultra-small screen Experience page optimizations */
+  .section-bubble {
+    padding: 0.75rem 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .section-bubble .timeline-container {
+    padding: 0 0 0 0.75rem !important;
+  }
+  
+  .section-bubble .timeline-content {
+    padding: 0.5rem 0.1rem !important;
+  }
+  
+  .section-bubble .timeline-content h2 {
+    font-size: 1.1rem !important;
+  }
+  
+  .section-bubble .timeline-content h3 {
+    font-size: 0.95rem !important;
+  }
+  
+  .section-bubble .timeline-content li {
+    font-size: 0.85rem !important;
+  }
+}
