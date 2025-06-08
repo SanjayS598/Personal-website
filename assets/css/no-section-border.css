@@ -1,0 +1,9 @@
+/* Remove border between title section and content section */
+#main > section#experience-education-container {
+    border-top: none;
+}
+
+/* Ensure consistent spacing */
+#main > section#experience-education-container > .inner {
+    padding-top: 2em;
+}

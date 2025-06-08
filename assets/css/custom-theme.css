@@ -1,0 +1,1040 @@
+/* Custom Dark Matte Gray Theme with Texture */
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: rgb(255, 255, 255); }
+}
+
+@keyframes remove-caret {
+  0% { border-right: .15em solid; }
+  100% { border-right: none; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.typing-container {
+  overflow: hidden; /* Ensures the text stays within the bounds */
+  white-space: nowrap; /* Keeps text on one line */
+  border-right: .15em solid; /* Creates the caret effect */
+  font-family: 'Outfit', sans-serif; /* Ensure the same font */
+  font-size: 1.5em; /* Adjust size as needed */
+  animation: typing 5s steps(40, end), blink-caret 0s step-end 5s;
+  animation-fill-mode: forwards; /* Ensures the final state persists */
+}
+
+.typing-container::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  animation: blink-caret 0s step-end infinite, remove-caret 5s step-end forwards;
+}
+
+:root {
+  --bg-color: #050c18;          /* Darker navy background */
+  --bg-alt-color: #091526;      /* Slightly lighter navy for contrast */
+  --fg-color: #ffffff;          /* Bright white text for contrast */
+  --accent-color: #0f2040;      /* Deep navy accent */
+  --accent-alt-color: #1e3a5f;  /* Medium navy accent */
+  --highlight-color: #3a6baf;   /* Muted blue highlight */
+  --highlight-bright: #5d9df6;  /* Brighter blue for hover states */
+  --tile-overlay: rgba(5, 12, 24, 0.85); /* Darker overlay */
+  --tile-hover: rgba(14, 36, 71, 0.95);  /* Slightly lighter on hover */
+  --section-bg: #050c18;        /* Same as bg-color */
+  --border-color: rgba(255, 255, 255, 0.25); /* Slightly more visible white borders */
+}
+
+/* Apply textured background */
+body {  
+  background-color: var(--bg-color);
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: var(--fg-color);
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Override wrapper styles */
+#wrapper {
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+#wrapper:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-color) 0%, rgba(5, 12, 24, 0.9) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Banner styling */
+#banner:after {
+  background-color: var(--bg-color);
+  opacity: 0.85;
+}
+
+#banner .inner {
+  z-index: 2;
+  border: 1px solid var(--border-color);
+  padding: 3em 4em !important;
+  background-color: rgba(5, 12, 24, 0.6);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+#banner .inner:before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+/* Menu styling */
+#menu {
+  background-color: rgba(5, 12, 24, 0.97);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  color: var(--fg-color); /* Ensure all text in menu is white */
+}
+
+#menu .links > li {
+  border-bottom: 1px solid var(--border-color);
+}
+
+#menu .links > li:last-child {
+  border-bottom: none;
+}
+
+#menu .links > li a {
+  transition: all 0.3s ease;
+  color: var(--fg-color) !important; /* Set font color to white */
+}
+
+#menu .links > li a:hover {
+  color: var(--highlight-bright) !important; /* Highlight color on hover */
+}
+
+/* Main content area */
+#main {
+  background-color: var(--bg-color);
+}
+
+/* Tiles styling */
+.tiles article {
+  background-color: var(--bg-alt-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.tiles article:before {
+  background-color: rgba(23, 58, 94, 0.85); /* Consistent color for all tiles */
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+  pointer-events: none;
+}
+
+.tiles article:hover:before {
+  background-color: rgba(42, 77, 120, 0.9) !important; /* Consistent hover color for all tiles */
+}
+
+.tiles article:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.tiles article:hover:after {
+  border-color: var(--border-color);
+  box-shadow: inset 0 0 20px rgba(93, 157, 246, 0.3);
+}
+
+.tiles article header {
+  position: relative;
+  z-index: 3 !important; /* Ensure header content appears above the overlay */
+}
+
+/* Section backgrounds */
+.spotlights > section {
+  background-color: var(--section-bg);
+  position: relative;
+  border-top: none; /* Removed border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.spotlights > section:nth-child(2n) {
+  background-color: var(--bg-alt-color);
+}
+
+/* Standard sections */
+section.special {
+  background-color: var(--section-bg);
+  position: relative;
+  border-top: none; /* Removed border */
+}
+
+/* Add a subtle line separator between sections */
+section:not(:first-of-type):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+
+/* Specifically remove separator for About Me page sections */
+#main section.special + section.spotlights:before,
+#about-intro section:before {
+  display: none;
+}
+
+/* Footer/contact styling */
+#contact {
+  background-color: var(--bg-alt-color);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+}
+
+#contact:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+
+#footer {
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+.button {
+  background-color: transparent;
+  border: 2px solid var(--fg-color);
+  color: var(--fg-color) !important;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+  border-color: var(--border-color);
+  color: var(--highlight-bright) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  background-color: var(--accent-alt-color);
+  border-color: var(--border-color);
+  color: var(--fg-color) !important;
+}
+
+.button.primary:hover {
+  background-color: var(--highlight-color);
+  border-color: var(--highlight-bright);
+  color: white !important;
+  box-shadow: 0 0 15px rgba(93, 157, 246, 0.3);
+}
+
+/* Form element styling */
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+select, 
+textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--fg-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="email"]:focus, 
+select:focus, 
+textarea:focus {
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 8px rgba(93, 157, 246, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Links styling */
+a {
+  color: var(--highlight-color);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--highlight-bright) !important;
+  text-shadow: 0 0 5px rgba(93, 157, 246, 0.5);
+}
+
+/* Special links hover effect */
+a.special {
+  position: relative;
+}
+
+a.special:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--highlight-bright);
+  transition: width 0.3s ease;
+}
+
+a.special:hover:after {
+  width: 100%;
+}
+
+/* Major headers styling */
+.major h1, .major h2, .major h3, .major h4, .major h5, .major h6 {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.major h1::after, .major h2::after, .major h3::after, 
+.major h4::after, .major h5::after, .major h6::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: var(--highlight-color);
+}
+
+/* Experience page specific styling */
+.experience-item {
+  background-color: var(--bg-alt-color);
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 2.5rem !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.experience-item::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+
+.experience-item h3 {
+  color: var(--highlight-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-category {
+  flex: 0 0 calc(33.33% - 2rem);
+  background-color: var(--bg-alt-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.skill-category.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 0.6s forwards;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border-color: var(--highlight-color);
+}
+
+/* Custom styles for the three-column layout */
+#one.tiles {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 12px; /* Add spacing between tiles */
+  padding: 12px; /* Add padding around the entire layout */
+}
+
+#one.tiles article {
+  width: 33.33%; /* Make each tile take exactly one third */
+  height: auto;
+  flex: 1; /* Distribute available space equally */
+  border: 1px solid var(--border-color);
+  border-radius: 4px; /* Add rounded corners */
+  overflow: hidden; /* Keep content within borders */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  background-size: cover !important; /* Ensure background images cover the full area */
+  background-position: center center !important; /* Center the background image */
+}
+
+/* Fix for image positioning within articles */
+.tiles article .image {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  display: block !important; /* Override the display: none from the original template */
+}
+
+.tiles article .image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Custom styling for the projects tile (third article) */
+#one.tiles article:nth-child(3):before {
+  background-color: rgba(23, 58, 94, 0.85) !important; /* Match the other tiles */
+}
+
+#one.tiles article:nth-child(3):hover:before {
+  background-color: rgba(42, 77, 120, 0.9) !important; /* Match the hover state of other tiles */
+}
+
+#one.tiles article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  border-color: var(--highlight-color);
+}
+
+
+
+#banner.style2 .inner {
+  max-width: 45%;
+}
+
+/* Profile image with circular frame */
+.smaller-image {
+  max-width: 60% !important;
+  margin: 0 auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--border-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  background-color: var(--bg-alt-color);
+}
+
+.smaller-image:hover {
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 25px rgba(93, 157, 246, 0.3);
+  transform: scale(1.02);
+}
+
+.smaller-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* Ensure the content section aligns properly with smaller image */
+#about-intro .content {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+/* Center the image in its container */
+#about-intro section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.spotlights > section > .image {
+  background-color: transparent;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spotlights > section > .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.smaller-image:hover img {
+  transform: scale(1.08);
+}
+
+/* Add slight rotation on hover for a dynamic effect */
+@keyframes gentle-float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.smaller-image:hover {
+  animation: gentle-float 3s ease infinite;
+}
+
+/* Three column features for Beyond Coding section */
+.features.three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.features article {
+  background-color: var(--bg-alt-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.features article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--highlight-color);
+}
+
+.features .icon {
+  font-size: 2.5rem;
+  color: var(--highlight-color);
+  margin-bottom: 1rem;
+}
+
+.features h3 {
+  color: var(--highlight-color);
+  margin-bottom: 1rem;
+}
+
+/* Animation styles for About Me page */
+.features article, .spotlights section {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.features article.visible, .spotlights section.visible {
+  opacity: 1;
+  animation: fadeIn 0.8s forwards;
+}
+
+/* Stagger the animations for features */
+.features article:nth-child(1) { transition-delay: 0.1s; }
+.features article:nth-child(2) { transition-delay: 0.2s; }
+.features article:nth-child(3) { transition-delay: 0.3s; }
+.features article:nth-child(4) { transition-delay: 0.4s; }
+
+/* About Me page specific title animation */
+#main section.special h1.typing-container {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2.5rem;
+  animation: typing 3s steps(20, end) forwards, blink-caret 0.75s step-end infinite;
+  border-right: 0.1em solid var(--fg-color);
+}
+
+/* Pause the cursor blinking once typing is complete */
+#main section.special h1.typing-container.typing-done {
+  border-right: none;
+}
+
+/* About Me page title in a box with rounded corners */
+#main section.special .title-box {
+  background-color: var(--accent-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 0 auto 2rem;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#main section.special .title-box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(30, 58, 95, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+#main section.special .title-box:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  border-radius: 7px;
+}
+
+#main section.special .title-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  border-color: var(--highlight-color);
+}
+
+#main section.special .title-box h1 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+  color: var(--fg-color);
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+#main section.special .title-box h1:after {
+  display: none;
+}
+
+/* Vertical Timeline Styling */
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 2rem 0 5rem; /* Add padding to the left for the timeline */
+}
+
+/* The vertical line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px; /* Thinner line for elegance */
+  background: var(--border-color);
+  left: 3rem; /* Position line on the left */
+  z-index: 1;
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem; /* Increased spacing between items */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+  width: calc(100% - 2rem); /* All items take full width minus the padding */
+  padding-left: 2rem; /* Space for the connection to the timeline */
+  margin-left: 0;
+  margin-right: 0;
+  display: flex; /* Use flexbox for better structure */
+  flex-direction: column;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Timeline dots/markers */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: var(--highlight-color);
+  border-radius: 50%;
+  top: 30px;
+  left: -8px; /* Position aligned with the timeline */
+  z-index: 3;
+  box-shadow: 0 0 15px var(--highlight-bright);
+  transition: all 0.3s ease;
+}
+
+/* Horizontal connector from dot to content */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--border-color);
+  top: 38px;
+  left: -8px; /* Connect from the dot */
+  z-index: 2;
+}
+
+/* Content box */
+.timeline-content {
+  background: var(--bg-alt-color);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--highlight-color); /* Accent border on the left */
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border-left: 3px solid var(--highlight-bright);
+}
+
+/* Company logo placement */
+.timeline-logo {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-color);
+  font-size: 1.3rem;
+  position: absolute;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  left: -6rem; /* Position on the left, next to the timeline */
+  top: 20px;
+  z-index: 4;
+  transition: all 0.3s ease;
+}
+
+.timeline-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--highlight-bright);
+  border-color: var(--highlight-color);
+}
+
+/* Timeline content styling */
+.timeline-content h2 {
+  margin: 0;
+  color: var(--highlight-color);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.timeline-content h3 {
+  margin: 0.3rem 0 1rem 0;
+  color: var(--highlight-bright);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.timeline-content .date {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  color: var(--fg-color);
+  opacity: 0.85;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+}
+
+.timeline-content p {
+  margin: 0 0 1rem 0;
+}
+
+.timeline-content ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.2rem;
+}
+
+.timeline-content ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.timeline-content ul li:before {
+  content: "→";
+  color: var(--highlight-bright);
+  position: absolute;
+  left: -1.2rem;
+  font-size: 0.9rem;
+}
+
+/* Remove arrow pointers for cleaner design */
+
+/* Section heading for resume-like timeline */
+.section-heading {
+  color: var(--highlight-color);
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.section-heading:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: var(--highlight-bright);
+}
+
+/* Resume-like timeline specific styles */
+#timeline-section .inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Timeline year marker styles - can be added for multi-year timelines */
+.timeline-year-marker {
+  position: absolute;
+  left: -4.5rem;
+  font-weight: bold;
+  color: var(--highlight-color);
+  font-size: 0.9rem;
+}
+
+/* Timeline animations */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(93, 157, 246, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(93, 157, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(93, 157, 246, 0); }
+}
+
+@keyframes timeline-fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timeline-item:hover::before {
+  animation: pulse 1.5s infinite;
+  background-color: var(--highlight-bright);
+}
+
+/* Override existing visible animation with a more elegant one */
+.timeline-item.visible {
+  animation: timeline-fade-in 0.8s forwards !important;
+}
+
+/* Animate the line to grow from top to bottom */
+@keyframes line-grow {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+/* Apply animation to timeline line */
+#timeline-section .timeline-container::before {
+  animation: line-grow 1.5s ease-out forwards;
+}
+
+/* Timeline responsive styles */
+@media screen and (max-width: 980px) {
+  .timeline-container {
+    padding: 0 2rem 0 5rem;
+  }
+  
+  .timeline-logo {
+    left: -5rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .timeline-container {
+    padding: 0 1rem 0 4rem;
+  }
+  
+  .timeline-container::before {
+    left: 2rem;
+  }
+  
+  .timeline-item::before {
+    left: -7px;
+  }
+  
+  .timeline-item::after {
+    width: 1.5rem;
+  }
+  
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    left: -4.5rem;
+  }
+  
+  .timeline-content .date {
+    position: static;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-content h2 {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-container {
+    padding: 0 1rem 0 3rem;
+  }
+  
+  .timeline-container::before {
+    left: 1.5rem;
+  }
+  
+  .timeline-content {
+    padding: 1.2rem;
+  }
+  
+  .timeline-logo {
+    display: none; /* Hide logos on very small screens */
+  }
+}
+
+/* Skills section animations and styling */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+#skills-section .skill-category {
+  flex: 0 0 calc(33.33% - 2rem);
+  background-color: var(--bg-alt-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#skills-section .skill-category.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 0.6s forwards;
+}
+
+#skills-section .skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border-color: var(--highlight-color);
+}
+
+#skills-section .skill-category h3 {
+  color: var(--highlight-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#skills-section .skill-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#skills-section .skill-list li {
+  margin: 0.75em 0;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+#skills-section .skill-list li:before {
+  content: "•";
+  color: var(--highlight-bright);
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 980px) {
+  #skills-section .skill-category {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #skills-section .skill-category {
+    flex: 0 0 100%;
+  }
+}

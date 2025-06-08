@@ -1,0 +1,217 @@
+/* Side-by-side layout and section bubbles */
+
+/* Animation for section bubbles */
+@keyframes section-bubble-in {
+  0% { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Container for side-by-side sections */
+.side-by-side-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 1600px; /* Control maximum width for better readability on large screens */
+  padding: 0 1rem;
+}
+
+/* Section bubbles */
+.section-bubble {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-width: 800px;
+  background-color: var(--bg-alt-color);
+  
+  background-attachment: fixed;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.section-bubble.visible {
+  animation: section-bubble-in 0.8s forwards ease-out;
+}
+
+.section-bubble:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  border-radius: 9px;
+  z-index: 1;
+}
+
+/* Add corner accent to section bubbles */
+.section-bubble:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, transparent 50%, var(--highlight-color) 50%);
+  z-index: 2;
+  transition: all 0.3s ease;
+  border-top-right-radius: 9px;
+}
+
+.section-bubble:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--highlight-color);
+}
+
+.section-bubble:hover:after {
+  background: linear-gradient(135deg, transparent 50%, var(--highlight-bright) 50%);
+  width: 45px;
+  height: 45px;
+}
+
+.section-bubble .section-heading {
+  margin-top: 0;
+}
+
+/* Adjust timeline container for bubbles */
+.section-bubble .timeline-container {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 0 0 0 3rem;
+  position: relative;
+  z-index: 3; /* Ensure timeline is above background pattern */
+}
+
+.section-bubble .timeline-container::before {
+  left: 1rem;
+  background: linear-gradient(to bottom, 
+    var(--border-color) 0%,
+    var(--highlight-color) 50%,
+    var(--border-color) 100%);
+}
+
+.section-bubble .timeline-item::before {
+  left: -18px;
+  background-color: var(--highlight-color);
+  /* Add subtle glow effect */
+  animation: gentle-pulse 2s infinite alternate;
+}
+
+@keyframes gentle-pulse {
+  from { box-shadow: 0 0 5px rgba(93, 157, 246, 0.3); }
+  to { box-shadow: 0 0 12px rgba(93, 157, 246, 0.6); }
+}
+
+.section-bubble .timeline-item.visible::before {
+  animation: 
+    gentle-pulse 2s infinite alternate,
+    timeline-dot-appear 0.5s forwards;
+}
+
+@keyframes timeline-dot-appear {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.section-bubble .timeline-item::after {
+  left: -10px;
+  width: 1.5rem;
+}
+
+.section-bubble .timeline-item {
+  padding-left: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .side-by-side-container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+  
+  .section-bubble {
+    flex: 1 1 46%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .section-bubble {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .side-by-side-container {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .section-bubble {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-bubble .timeline-container {
+    padding: 0 0 0 2.5rem;
+  }
+  
+  .section-bubble .timeline-container::before {
+    left: 0.8rem;
+  }
+  
+  .section-bubble .timeline-item::before {
+    left: -15px;
+  }
+  
+  .section-bubble .timeline-item::after {
+    width: 1rem;
+    left: -8px;
+  }
+  
+  .section-bubble:after {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-bubble {
+    padding: 1.2rem;
+    border-radius: 8px;
+  }
+  
+  .section-bubble .section-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-bubble .timeline-container {
+    padding: 0 0 0 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .section-bubble .timeline-item {
+    margin-bottom: 2rem;
+  }
+  
+  .side-by-side-container {
+    padding: 0 0.5rem;
+  }
+}

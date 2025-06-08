@@ -1,0 +1,71 @@
+/* Timeline date overlap fix */
+
+/* Fix date position to prevent overlap with titles */
+.timeline-content {
+  padding-top: 2.5rem !important; /* Increased padding at the top for date */
+}
+
+.timeline-content .date {
+  position: absolute;
+  top: 0.8rem;
+  right: 2rem;
+  background-color: var(--accent-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin: 0;
+  color: var(--fg-color);
+  opacity: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  z-index: 5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-left: 2px solid var(--highlight-color);
+}
+
+.timeline-content h2 {
+  padding-right: 6rem; /* Ensure title doesn't overlap with date */
+  line-height: 1.3;
+}
+
+/* Responsive fixes */
+@media screen and (max-width: 736px) {
+  .timeline-content {
+    padding-top: 3rem !important; /* More space on small screens */
+  }
+  
+  .timeline-content .date {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.4rem;
+    right: 1rem;
+    max-width: 40%; /* Limit width on small screens */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .timeline-content h2 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .timeline-content .date {
+    position: relative;
+    top: -0.5rem;
+    right: auto;
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    max-width: 100%;
+  }
+  
+  .timeline-content {
+    padding-top: 1.5rem !important;
+  }
+  
+  .timeline-content h2 {
+    padding-right: 0;
+  }
+}

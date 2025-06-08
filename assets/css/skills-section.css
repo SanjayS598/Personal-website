@@ -1,0 +1,134 @@
+/* Skills section styling */
+
+/* Two-column skills container */
+.skills-container.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Skill category styling */
+.skill-category {
+  background-color: var(--bg-alt-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--highlight-color);
+}
+
+.skill-category.visible {
+  animation: skill-fade-in 0.8s forwards ease-out;
+}
+
+@keyframes skill-fade-in {
+  0% { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Category heading */
+.skill-category h3 {
+  color: var(--highlight-color);
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.skill-category h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--highlight-bright);
+}
+
+/* Skill list */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skill-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 1.1rem; /* Increased font size */
+  line-height: 1.6; /* Increased line height for better readability */
+  margin-bottom: 0.3rem; /* Added margin for better spacing */
+}
+
+.skill-list li:before {
+  content: "→";
+  color: var(--highlight-bright);
+  position: absolute;
+  left: 0;
+  font-size: 1rem; /* Increased arrow size to match */
+  top: 0.1rem; /* Adjusted vertical position for alignment */
+}
+
+/* Animation for skill items */
+.skill-category.visible .skill-list li {
+  animation: skill-item-in 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes skill-item-in {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Add delay to each skill item */
+.skill-category.visible .skill-list li:nth-child(1) { animation-delay: 0.1s; }
+.skill-category.visible .skill-list li:nth-child(2) { animation-delay: 0.15s; }
+.skill-category.visible .skill-list li:nth-child(3) { animation-delay: 0.2s; }
+.skill-category.visible .skill-list li:nth-child(4) { animation-delay: 0.25s; }
+.skill-category.visible .skill-list li:nth-child(5) { animation-delay: 0.3s; }
+.skill-category.visible .skill-list li:nth-child(6) { animation-delay: 0.35s; }
+.skill-category.visible .skill-list li:nth-child(7) { animation-delay: 0.4s; }
+.skill-category.visible .skill-list li:nth-child(8) { animation-delay: 0.45s; }
+.skill-category.visible .skill-list li:nth-child(9) { animation-delay: 0.5s; }
+.skill-category.visible .skill-list li:nth-child(10) { animation-delay: 0.55s; }
+.skill-category.visible .skill-list li:nth-child(11) { animation-delay: 0.6s; }
+.skill-category.visible .skill-list li:nth-child(12) { animation-delay: 0.65s; }
+
+/* Responsive styles */
+@media screen and (max-width: 980px) {
+  .skills-container.two-column {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .skill-category {
+    padding: 2rem 1.5rem; /* Adjusted padding for better space with larger text */
+  }
+  
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+}
